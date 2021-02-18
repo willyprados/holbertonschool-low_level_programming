@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * swap_int - swaps the values of two integers
@@ -7,10 +8,18 @@
  * @c: is a variable
  * Return: 0;
  */
-void swap_int(int *a, int *b)
+int main()
 {
-	int c;
-	c = *a;
-	*a = *b;
-	*b = c;
+	int a = 98;
+	int b = 42;
+	int c;         
+
+	printf("a=%d, b=%d\n", a, b);
+
+	c = *&a;
+	a = *&b;
+	b = c;
+
+	printf("a=%d, b=%d\n", a, b);
+	return (0);
 }
